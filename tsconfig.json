@@ -32,6 +32,12 @@
     },
     {
       "path": "./libs/shared/test-utils"
+    },
+    {
+      "path": "./apps/auth-service"
+    },
+    {
+      "path": "./apps/user-service"
     }
   ]
 }
