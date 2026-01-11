@@ -86,17 +86,14 @@
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
     "@nestjs/platform-express": "^11.0.0",
-    "@prisma/client": "^7.2.0",
-    "prisma": "^7.2.0",
+    "dotenv": "^17.2.3",
+    "pg": "^8.16.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@nestjs/testing": "^11.0.0"
-  },
-  "scripts": {
-    "prisma:generate": "prisma generate --schema=prisma/schema.prisma",
-    "postinstall": "prisma generate --schema=prisma/schema.prisma"
+    "@nestjs/testing": "^11.0.0",
+    "dotenv-cli": "^11.0.0"
   }
 }

@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+  - 'libs/*'
+  - 'gateway'
+  - 'auth-service'
+  - 'user-service'
