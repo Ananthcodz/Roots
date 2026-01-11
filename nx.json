@@ -18,6 +18,12 @@
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
+      "include": [
+        "apps/**/*",
+        "libs/shared/models/*",
+        "shared-types/*",
+        "shared-utils/*"
+      ],
       "options": {
         "typecheck": {
           "targetName": "typecheck"
@@ -62,22 +68,6 @@
       }
     },
     {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e",
-        "ciTargetName": "e2e-ci"
-      }
-    },
-    {
-      "plugin": "@nx/js/typescript",
-      "include": ["libs/shared/models/*", "shared-types/*", "shared-utils/*"],
-      "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        }
-      }
-    },
-    {
       "plugin": "@nx/vitest",
       "options": {
         "testTargetName": "test"
@@ -98,11 +88,7 @@
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
-      },
-      "exclude": [
-        "gateway-e2e/**/*",
-        "auth-service-e2e/**/*"
-      ]
+      }
     }
   ],
   "targetDefaults": {
