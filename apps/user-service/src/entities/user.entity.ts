@@ -35,6 +35,12 @@ export class User {
   @Column({ nullable: true })
   photo_url!: string;
 
+  @Column({nullable: true})
+  age!: number;
+
+  @Column({nullable:true})
+  gender!: string;
+
   @CreateDateColumn({ type: 'timestamptz' })
   created_at!: Date;
 

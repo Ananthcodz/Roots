@@ -20,6 +20,11 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@org/shared-types": ["libs/shared-types/src/index.ts"],
+    }
   }
 }

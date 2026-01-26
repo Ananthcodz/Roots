@@ -4,6 +4,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { User } from '../entities/user.entity';
+import {PassportModule} from '@nestjs/passport';
+import {JwtModule} from '@nestjs/jwt';
+import { jwtStrategy } from '../strategies/jwt.strategy';
+
 
 @Module({
   imports: [
@@ -28,17 +32,32 @@ import { User } from '../entities/user.entity';
           host: configService.get<string>('DB_HOST', 'localhost'),
           port: configService.get<number>('DB_PORT', 5432),
           username: configService.get<string>('DB_USERNAME', 'postgres'),
-          password: password, // Already a string from configService
+          password: password,
           database: configService.get<string>('DB_NAME', 'postgres'),
           entities: [User],
-          synchronize: false,
-          logging: false,
+          synchronize: false, //keep false for prod
+          logging: false, //keep false for prod
+          migrations: ['dist/migrations/*.js'],
+          migrationsRun: true
         };
       },
     }),
     TypeOrmModule.forFeature([User]),
+
+    PassportModule.register({defaultStrategy: 'jwt'}),
+
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        secret: configService.getOrThrow<string>('JWT_SECRET'),
+        signOptions: {
+          expiresIn: 604800, //7 days in seconds
+        },
+      }),
+    }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, jwtStrategy],
 })
 export class AppModule {}

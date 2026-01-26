@@ -1,0 +1,15 @@
+export interface userProfileResponseDto{
+  id: number,
+  firstName: string,
+  lastName: string,
+  fullName: string,
+  email: string,
+  bio: string,
+  location: string,
+  isGoogleSignedIn: boolean,
+  photoUrl: string,
+  age:number,
+  gender:string,
+  createdAt: Date,
+  updatedAt: Date,
+}

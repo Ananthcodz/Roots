@@ -2,7 +2,7 @@
   "name": "@org/shared-utils",
   "version": "0.0.1",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -13,5 +13,13 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nestjs/jwt": "^11.0.2",
+    "@nestjs/passport": "^11.0.5",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/passport-jwt": "^4.0.1"
+  }
 }
