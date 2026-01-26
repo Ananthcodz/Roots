@@ -41,6 +41,9 @@ export class User {
   @Column({nullable:true})
   gender!: string;
 
+  @Column({ nullable: true})
+  vital_status!: string;
+
   @CreateDateColumn({ type: 'timestamptz' })
   created_at!: Date;
 

@@ -10,6 +10,7 @@ export interface userProfileResponseDto{
   photoUrl: string,
   age:number,
   gender:string,
+  vitalStatus: string,
   createdAt: Date,
   updatedAt: Date,
 }

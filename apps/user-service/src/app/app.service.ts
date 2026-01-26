@@ -67,6 +67,7 @@ export class AppService {
       photoUrl: user.photo_url,
       age:user.age,
       gender:user.gender,
+      vitalStatus: user.vital_status,
       createdAt: user.created_at,
       updatedAt: user.updated_at,
     };
